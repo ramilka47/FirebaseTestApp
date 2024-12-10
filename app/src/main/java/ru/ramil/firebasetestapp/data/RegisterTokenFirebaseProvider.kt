@@ -1,6 +1,5 @@
 package ru.ramil.firebasetestapp.data
 
-import android.util.Log
 import com.google.firebase.messaging.FirebaseMessaging
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
