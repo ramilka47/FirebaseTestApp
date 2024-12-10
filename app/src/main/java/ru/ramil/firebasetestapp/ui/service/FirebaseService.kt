@@ -12,6 +12,8 @@ import ru.ramil.firebasetestapp.R
 import ru.ramil.firebasetestapp.ui.Application
 import ru.ramil.firebasetestapp.ui.screen.MainActivity
 import ru.ramil.firebasetestapp.ui.view_model.FirebaseViewModel
+import ru.ramil.firebasetestapp.ui.view_model.MainViewModel
+import ru.ramil.firebasetestapp.ui.view_model.ViewModelFactory
 import javax.inject.Inject
 
 class FirebaseService : FirebaseMessagingService() {
@@ -21,7 +23,11 @@ class FirebaseService : FirebaseMessagingService() {
     }
 
     @Inject
-    lateinit var firebaseViewModel: FirebaseViewModel
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private val firebaseViewModel by lazy{
+        viewModelFactory.create(FirebaseViewModel::class.java)
+    }
 
     override fun onCreate() {
         super.onCreate()

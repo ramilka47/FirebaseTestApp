@@ -16,12 +16,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import ru.ramil.firebasetestapp.ui.Application
 import ru.ramil.firebasetestapp.ui.theme.FirebaseTestAppTheme
 import ru.ramil.firebasetestapp.ui.view_model.MainViewModel
+import ru.ramil.firebasetestapp.ui.view_model.ViewModelFactory
 import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
 
     @Inject
-    lateinit var mainViewModel: MainViewModel
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private val mainViewModel by lazy{
+        viewModelFactory.create(MainViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
