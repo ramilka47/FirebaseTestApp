@@ -19,7 +19,7 @@ class ViewModelFactory(
                 FirebaseViewModel(registerTokenUseCase, setTokenUseCase) as T
             }
             MainViewModel::class.java -> {
-                MainViewModel(getTokenUseCase) as T
+                MainViewModel(registerTokenUseCase, getTokenUseCase) as T
             }
             else -> throw Exception("class with name $modelClass not supported")
         }

@@ -66,7 +66,7 @@ class FirebaseService : FirebaseMessagingService() {
         )
 
         val notification = NotificationCompat.Builder(applicationContext, DEFAULT_CHANNEL_ID)
-            .setSmallIcon(R.drawable.gcm_icon2)
+            .setSmallIcon(R.drawable.googleg_standard_color_18)
             .setContentTitle(title)
             .setContentText(message)
             .setAutoCancel(true)
