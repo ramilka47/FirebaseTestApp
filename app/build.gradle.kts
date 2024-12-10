@@ -1,16 +1,17 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.ksp)
 }
 
 android {
     namespace = "ru.ramil.firebasetestapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "ru.ramil.firebasetestapp"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -66,4 +67,12 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(libs.firebase.messaging)
+
+    //dagger
+    implementation(libs.com.google.dagger)
+    implementation(libs.com.google.dagger.support)
+    ksp(libs.com.google.dagger.processor)
+    ksp(libs.com.google.dagger.compiler)
 }

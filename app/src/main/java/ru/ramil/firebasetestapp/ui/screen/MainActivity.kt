@@ -1,4 +1,4 @@
-package ru.ramil.firebasetestapp
+package ru.ramil.firebasetestapp.ui.screen
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
