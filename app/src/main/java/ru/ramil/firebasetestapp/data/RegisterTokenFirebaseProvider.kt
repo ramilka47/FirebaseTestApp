@@ -13,10 +13,8 @@ class RegisterTokenFirebaseProvider : RegisterTokenProvider {
                 continuation.resume(
                     try {
                         val pushToken = task.result
-                        Log.d("JCD", "push_token $pushToken")
                         pushToken
                     } catch (e: Throwable) {
-                        Log.e("JCD", "", e)
                         null
                     }
                 )
