@@ -12,7 +12,7 @@ composeBom = "2024.04.01"
 
 dagger2 = "2.53"
 
-ksp = "2.0.21-1.0.27"
+ksp = "1.9.0-1.0.12"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
