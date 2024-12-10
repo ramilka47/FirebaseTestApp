@@ -70,6 +70,9 @@ dependencies {
 
     implementation(libs.firebase.messaging)
 
+
+    implementation(libs.android.compose.runtime)
+
     //dagger
     implementation(libs.com.google.dagger)
     implementation(libs.com.google.dagger.support)

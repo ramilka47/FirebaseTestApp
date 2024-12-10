@@ -12,6 +12,8 @@ composeBom = "2024.04.01"
 
 dagger2 = "2.53"
 
+compose-runtime = "1.7.5"
+
 ksp = "1.9.0-1.0.12"
 
 [libraries]
@@ -36,6 +38,9 @@ com-google-dagger = { group = "com.google.dagger", name = "dagger-android", vers
 com-google-dagger-support = { group = "com.google.dagger", name = "dagger-android-support", version.ref = "dagger2" }
 com-google-dagger-processor = { group = "com.google.dagger", name = "dagger-android-processor", version.ref = "dagger2" }
 com-google-dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger2" }
+
+
+android-compose-runtime = { group = "androidx.compose.runtime", name = "runtime-livedata", version.ref = "compose-runtime" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

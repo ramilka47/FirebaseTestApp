@@ -9,6 +9,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import ru.ramil.firebasetestapp.ui.Application
@@ -26,12 +28,15 @@ class MainActivity : ComponentActivity() {
 
         Application.appComponent.inject(this)
 
+        mainViewModel.onCreate()
+
         enableEdgeToEdge()
+
         setContent {
             FirebaseTestAppTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    Token(
+                        mainViewModel.tokenLiveData.observeAsState(),
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -41,17 +46,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
+fun Token(token : State<String?>, modifier: Modifier = Modifier) {
+     Text(
+        text = "my Firebase token is: \"${token.value}\"",
         modifier = modifier
     )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    FirebaseTestAppTheme {
-        Greeting("Android")
-    }
 }
