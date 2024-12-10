@@ -7,11 +7,13 @@ import ru.ramil.firebasetestapp.di.module.ProviderModule
 import ru.ramil.firebasetestapp.di.module.UseCaseModule
 import ru.ramil.firebasetestapp.ui.screen.MainActivity
 import ru.ramil.firebasetestapp.ui.service.FirebaseService
+import ru.ramil.firebasetestapp.ui.view_model.ViewModelFactory
 
 @Component(modules = [
     UseCaseModule::class,
     ProviderModule::class,
-    AppModule::class
+    AppModule::class,
+    ViewModelFactory::class
 ])
 interface AppComponent {
 
