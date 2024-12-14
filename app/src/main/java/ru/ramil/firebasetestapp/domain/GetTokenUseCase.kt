@@ -5,5 +5,5 @@ import ru.ramil.firebasetestapp.data.IGetTokenProvider
 class GetTokenUseCase(private val iGetTokenProvider: IGetTokenProvider) {
 
     suspend fun execute() =
-        iGetTokenProvider.getToken()
+        iGetTokenProvider.getToken()?.value
 }

@@ -12,7 +12,7 @@ class RegisterTokenFirebaseProvider : RegisterTokenProvider {
                 continuation.resume(
                     try {
                         val pushToken = task.result
-                        pushToken
+                        Token(pushToken)
                     } catch (e: Throwable) {
                         null
                     }

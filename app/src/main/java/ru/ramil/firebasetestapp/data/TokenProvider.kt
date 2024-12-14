@@ -8,10 +8,10 @@ class TokenProvider(private val preferences : SharedPreferences) : ITokenProvide
         private const val TOKEN_KEY = "token"
     }
 
-    override fun getToken(): String? =
-        preferences.getString(TOKEN_KEY, null)
+    override fun getToken(): Token? =
+        preferences.getString(TOKEN_KEY, null)?.let { Token(it) }
 
 
-    override fun setToken(token : String) =
-        preferences.edit().putString(TOKEN_KEY, token).apply()
+    override fun setToken(token : Token) =
+        preferences.edit().putString(TOKEN_KEY, token.value).apply()
 }
